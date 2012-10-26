@@ -9,7 +9,7 @@ namespace Cloudmanic\Api;
 
 class Skyclerk
 {
-	private static $_apihost = 'http://skyclerk.cloudmanic.dev/api/v2';
+	private static $_apihost = 'https://skyclerk.cloudmanic.com/api/v2';
 	private static $_request_url = '';
 	private static $_response = '';
 	private static $_raw_response = '';
@@ -53,6 +53,14 @@ class Skyclerk
 		self::set_data('sort', $sort);
 	}
 	
+	//
+	// Set API host.
+	//
+	public static function set_api_host($host)
+	{
+		self::$_apihost = $host;
+	}
+	
 	// ----------------------- Non-API Getters --------------------------- //
 	
 	//
@@ -69,6 +77,14 @@ class Skyclerk
 	public static function get_error()
 	{
 		return self::$_error;
+	}
+	
+	//
+	// Get API host.
+	//
+	public static function get_api_host()
+	{
+		return self::$_apihost;
 	}
 
 	// ----------------------- Ledger API Requests ----------------------- //
