@@ -1,6 +1,8 @@
 {
-	"name": "cloudmanic/cloudmanic-api-php",
+	"name": "cloudmanic/applications-api-php",
 	"version": "1.0.0",
+	"minimum-stability": "dev",
+	
 	"autoload": {
 		"psr-0": { "Cloudmanic\\Api": "src/" }
 	}
