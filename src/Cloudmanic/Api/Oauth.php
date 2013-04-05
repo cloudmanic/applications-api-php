@@ -33,7 +33,7 @@ class Oauth
 		}
 		
 		// Setup base url.
-		if($this->client_env == 'dev')
+		if($this->client_env == 'local')
 		{
 			$this->_base = 'http://accounts.cloudmanic.dev/';
 		} else
