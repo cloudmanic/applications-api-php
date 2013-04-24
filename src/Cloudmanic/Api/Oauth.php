@@ -54,7 +54,13 @@ class Oauth
 		}
 		
 		// Make request.
-		$url = $this->_base . 'oauth/user?' . http_build_query(array('access_token' => $this->_access_token));
+		$q = array(
+			'access_token' => $this->_access_token,
+			'auto_create' => 1,
+			'type' => 'website',
+			'format' => 'json'
+		);
+		$url = $this->_base . 'api/v1/me/profile?' . http_build_query($q);		
 		$d = json_decode(file_get_contents($url), TRUE);
 		
 		// Make sure there were no errors.
