@@ -1,8 +1,8 @@
 <?php
 //
 // By: Cloudmanic Labs, LLC 
-// Web: http://cloudmanic.com/skyclerk
-// Date: 9/28/2012
+// Web: http://cloudmanic.com/evermanic
+// Date: 4/15/2013
 //
 
 namespace Cloudmanic\Api;

@@ -102,7 +102,7 @@ class Base
 	public function get($object)
 	{
 		$this->request_url = $this->apihost . '/' . $object;
-		return $this->_request('get');
+		return $this->request('get');
 	} 
 
 	//
@@ -111,7 +111,7 @@ class Base
 	public function get_by_id($object, $id)
 	{
 		$this->request_url = $this->apihost . '/' . $object . '/id/' . $id;
-		return $this->_request('get');
+		return $this->request('get');
 	} 
 	
 	//
@@ -120,7 +120,7 @@ class Base
 	public function create($object)
 	{
 		$this->request_url = $this->apihost . '/' . $object . '/create';
-		return $this->_request('post');
+		return $this->request('post');
 	} 
 	
 	//
@@ -130,7 +130,7 @@ class Base
 	{
 		$this->set_data('Id', $id);
 		$this->request_url = $this->apihost . '/' . $object . '/delete';
-		return self::_request('post');	
+		return self::request('post');	
 	}
 
 	// ----------------- Curl Functions -------------------- //
@@ -138,7 +138,7 @@ class Base
 	//
 	// Make request to Server
 	//
-	private function _request($type)
+	public function request($type)
 	{
 		// Reset error.
 		$this->error = array();
