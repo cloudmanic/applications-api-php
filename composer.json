@@ -1,7 +1,13 @@
 {
 	"name": "cloudmanic/applications-api-php",
+	
 	"version": "1.0.0",
+	
 	"minimum-stability": "dev",
+	
+	"require": {
+		"symfony/console": "2.3.*@dev"
+   }
 	
 	"autoload": {
 		"psr-0": { "Cloudmanic\\Api": "src/" }
