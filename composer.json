@@ -7,7 +7,7 @@
 	
 	"require": {
 		"symfony/console": "2.3.*@dev"
-   }
+	},
 	
 	"autoload": {
 		"psr-0": { "Cloudmanic\\Api": "src/" }
