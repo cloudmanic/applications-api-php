@@ -132,6 +132,16 @@ class Base
 		$this->request_url = $this->apihost . '/' . $object . '/delete';
 		return self::request('post');	
 	}
+	
+	//
+	// All data since a particular time entries.
+	//
+	public function since($date)
+	{
+		$this->set_data('since', $date);
+		$this->request_url = $this->apihost . '/data/since';
+		return $this->request('get');
+	} 
 
 	// ----------------- Curl Functions -------------------- //
 
