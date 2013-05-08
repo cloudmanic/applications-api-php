@@ -9,6 +9,7 @@ namespace Cloudmanic\Api;
 
 class Base
 {
+	public $accounts_host = 'https://accounts.cloudmanic.com';
 	public $request_url = '';
 	public $response = '';
 	public $raw_response = '';
@@ -66,6 +67,14 @@ class Base
 	public function set_api_host($host)
 	{
 		$this->apihost = $host;
+	}
+	
+	//
+	// Set Accounts host.
+	//
+	public function set_accounts_host($host)
+	{
+		$this->accounts_host = $host;
 	}
 	
 	// ----------------------- Non-API Getters --------------------------- //
@@ -141,6 +150,26 @@ class Base
 		$this->set_data('since', $date);
 		$this->request_url = $this->apihost . '/data/since';
 		return $this->request('get');
+	} 
+	
+	// ----------------------- Accounts API Requests ----------------------- //
+
+	//
+	// Get the account
+	//
+	public function get_account_profile()
+	{
+		$this->request_url = $this->accounts_host . '/api/v1/accounts/profile';
+		return $this->request('get');
+	} 
+	
+	//
+	// Update the account
+	//
+	public function update_account()
+	{
+		$this->request_url = $this->accounts_host . '/api/v1/accounts/update';
+		return $this->request('post');
 	} 
 
 	// ----------------- Curl Functions -------------------- //
