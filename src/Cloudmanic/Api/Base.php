@@ -110,7 +110,7 @@ class Base
 	//
 	public function get($object)
 	{
-		$this->request_url = $this->apihost . '/' . $object;
+		$this->request_url = $this->apihost . '/api/v1/' . $object;
 		return $this->request('get');
 	} 
 
@@ -119,7 +119,7 @@ class Base
 	//
 	public function get_by_id($object, $id)
 	{
-		$this->request_url = $this->apihost . '/' . $object . '/id/' . $id;
+		$this->request_url = $this->apihost . '/api/v1/' . $object . '/id/' . $id;
 		return $this->request('get');
 	} 
 	
@@ -128,7 +128,7 @@ class Base
 	//
 	public function create($object)
 	{
-		$this->request_url = $this->apihost . '/' . $object . '/create';
+		$this->request_url = $this->apihost . '/api/v1/' . $object . '/create';
 		return $this->request('post');
 	} 
 	
@@ -138,7 +138,7 @@ class Base
 	public function delete($object, $id)
 	{
 		$this->set_data('Id', $id);
-		$this->request_url = $this->apihost . '/' . $object . '/delete';
+		$this->request_url = $this->apihost . '/api/v1/' . $object . '/delete';
 		return self::request('post');	
 	}
 	
@@ -148,7 +148,7 @@ class Base
 	public function since($date)
 	{
 		$this->set_data('since', $date);
-		$this->request_url = $this->apihost . '/data/since';
+		$this->request_url = $this->apihost . '/api/v1/data/since';
 		return $this->request('get');
 	} 
 	

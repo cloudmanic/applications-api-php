@@ -9,7 +9,7 @@ namespace Cloudmanic\Api;
 
 class Evermanic
 {
-	public static $apihost = 'https://evermnic.cloudmanic.com/api/v1';
+	public static $apihost = 'https://evermnic.cloudmanic.com';
 	private static $i = null;
 	private static $_objects = array('profiles');
 
