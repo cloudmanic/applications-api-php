@@ -10,6 +10,7 @@ namespace Cloudmanic\Api;
 class Base
 {
 	public $accounts_host = 'https://accounts.cloudmanic.com';
+	public $api_version = 'v1';
 	public $request_url = '';
 	public $response = '';
 	public $raw_response = '';
@@ -77,6 +78,14 @@ class Base
 		$this->accounts_host = $host;
 	}
 	
+	//
+	// Set Api Version.
+	//
+	public function set_api_version($version)
+	{
+		$this->api_version = $version;
+	}
+	
 	// ----------------------- Non-API Getters --------------------------- //
 	
 	//
@@ -110,7 +119,7 @@ class Base
 	//
 	public function get($object)
 	{
-		$this->request_url = $this->apihost . '/api/v1/' . $object;
+		$this->request_url = $this->apihost . '/api/' . $this->api_version . '/' . $object;
 		return $this->request('get');
 	} 
 
@@ -119,7 +128,7 @@ class Base
 	//
 	public function get_by_id($object, $id)
 	{
-		$this->request_url = $this->apihost . '/api/v1/' . $object . '/id/' . $id;
+		$this->request_url = $this->apihost . '/api/' . $this->api_version . '/' . $object . '/id/' . $id;
 		return $this->request('get');
 	} 
 	
@@ -128,7 +137,7 @@ class Base
 	//
 	public function create($object)
 	{
-		$this->request_url = $this->apihost . '/api/v1/' . $object . '/create';
+		$this->request_url = $this->apihost . '/api/' . $this->api_version . '/' . $object . '/create';
 		return $this->request('post');
 	} 
 	
@@ -138,7 +147,7 @@ class Base
 	public function delete($object, $id)
 	{
 		$this->set_data('Id', $id);
-		$this->request_url = $this->apihost . '/api/v1/' . $object . '/delete';
+		$this->request_url = $this->apihost . '/api/' . $this->api_version . '/' . $object . '/delete';
 		return self::request('post');	
 	}
 	
@@ -148,7 +157,7 @@ class Base
 	public function since($date)
 	{
 		$this->set_data('since', $date);
-		$this->request_url = $this->apihost . '/api/v1/data/since';
+		$this->request_url = $this->apihost . '/api/' . $this->api_version . '/data/since';
 		return $this->request('get');
 	} 
 	
@@ -159,7 +168,7 @@ class Base
 	//
 	public function get_account_profile()
 	{
-		$this->request_url = $this->accounts_host . '/api/v1/accounts/profile';
+		$this->request_url = $this->accounts_host . '/api/' . $this->api_version . '/accounts/profile';
 		return $this->request('get');
 	} 
 	
@@ -168,7 +177,7 @@ class Base
 	//
 	public function update_account()
 	{
-		$this->request_url = $this->accounts_host . '/api/v1/accounts/update';
+		$this->request_url = $this->accounts_host . '/api/' . $this->api_version . '/accounts/update';
 		return $this->request('post');
 	} 
 
