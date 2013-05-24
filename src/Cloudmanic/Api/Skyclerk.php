@@ -31,7 +31,7 @@ class Skyclerk
 	//
 	public static function ledger_get()
 	{
-		self::instance()->request_url = self::instance()->apihost . '/ledger/get';
+		self::instance()->request_url = self::instance()->apihost . '/api/v2/ledger/get';
 		return self::instance()->request('get');
 	} 
 
