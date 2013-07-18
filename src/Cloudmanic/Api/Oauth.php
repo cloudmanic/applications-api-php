@@ -22,7 +22,7 @@ class Oauth
 	// Constructor.
 	//
 	public function __construct($options)
-	{
+	{	
 		// Setup vars.
 		foreach($options AS $key => $row) 
 		{
@@ -78,7 +78,7 @@ class Oauth
 	//
 	public function url_authorize()
 	{
-		return $this->_base . '/oauth/authorize';
+		return $this->_base . 'oauth/authorize';
 	}
 
 	//
