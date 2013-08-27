@@ -11,7 +11,7 @@ class Skyclerk
 {
 	public static $apihost = 'https://skcylerk.cloudmanic.com/api/v2';
 	private static $i = null;
-	private static $_objects = array('ledger');
+	private static $_objects = array('ledger', 'snapclerk');
 
 	//
 	// Instance ...
@@ -33,6 +33,15 @@ class Skyclerk
 	{
 		self::instance()->request_url = self::instance()->apihost . '/api/v2/ledger/get';
 		return self::instance()->request('get');
+	} 
+
+	//
+	// SnapClerk upload.
+	//
+	public static function snapclerk_upload()
+	{
+		self::instance()->request_url = self::instance()->apihost . '/api/' . self::instance()->api_version . '/snapclerk/upload';		
+		return self::instance()->request('post');
 	} 
 
 	//
