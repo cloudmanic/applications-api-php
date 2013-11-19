@@ -7,7 +7,7 @@
 	
 	"require": {
 		"symfony/console": "2.3.*@dev",
-		"guzzle/guzzle": "3.*.*"
+		"guzzle/guzzle": "*"
 	},
 	
 	"autoload": {
