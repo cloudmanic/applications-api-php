@@ -6,8 +6,8 @@
 	"minimum-stability": "dev",
 	
 	"require": {
-		"symfony/console": "2.4.*",
-		"php" : ">=5.3.3",
+		"symfony/console": "2.5.*",
+		"php" : ">=5.4.*",
 		"guzzle/http" : "3.7.*@dev"
 	},
 	
