@@ -138,9 +138,9 @@ class Oauth
 		$params = json_decode($response, true);
 
 		// Make sure there were no errors.
-		if($params['status'] && isset($params['access_token']))
+		if($params['status'] && isset($params['data']['access_token']))
 		{
-			return $params['access_token'];
+			return $params['data']['access_token'];
 		} else
 		{
 			$this->_error = $params;
